@@ -48,7 +48,7 @@ public class ProcessController {
             String line = breader.readLine();
 
             while (line != null) {
-                String[] lineSplitted = line.split("รง");
+                String[] lineSplitted = line.split("็");
                 switch (lineSplitted[0]) {
                     case "001":
                         sellers.add(new Salesman(lineSplitted[1], lineSplitted[2], Double.parseDouble(lineSplitted[3])));
@@ -87,8 +87,7 @@ public class ProcessController {
         return null;
     }
 
-    public String processInfo() throws IOException {
-        String result = "";
+    public void processInfo() throws IOException {
         FileWriter arq = new FileWriter(getCompletePath());
         PrintWriter gravarArq = new PrintWriter(arq);
 
@@ -135,7 +134,5 @@ public class ProcessController {
         gravarArq.printf("O nome do pior vendedor(pelo valor das vendas): %s\n", cheapestSalemanSales);
 
         arq.close();
-        
-        return result;
     }
 }
