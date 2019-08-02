@@ -22,12 +22,16 @@ public class IBMTest {
     public static void main(String[] args) throws IOException {
         ReaderController readerController = new ReaderController();
         File[] files = readerController.readFiles();
-//        System.out.println(files.length);;
+
         if (files != null) {
             ProcessController processController = new ProcessController();
             processController.processFile(files);
             
-            processController.processInfo();
+            try {
+                processController.processInfo();
+            } catch (IOException e) {
+                System.out.println("Nao foi possivel processar os dados!");
+            }
         }
     }
     
