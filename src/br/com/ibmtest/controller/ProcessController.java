@@ -48,7 +48,7 @@ public class ProcessController {
             String line = breader.readLine();
 
             while (line != null) {
-                String[] lineSplitted = line.split("ç");
+                String[] lineSplitted = line.split("\\u00e7");
                 switch (lineSplitted[0]) {
                     case "001":
                         sellers.add(new Salesman(lineSplitted[1], lineSplitted[2], Double.parseDouble(lineSplitted[3])));

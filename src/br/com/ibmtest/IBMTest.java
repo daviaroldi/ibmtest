@@ -27,7 +27,7 @@ public class IBMTest {
             ProcessController processController = new ProcessController();
             processController.processFile(files);
             
-            String info = processController.processInfo();
+            processController.processInfo();
         }
     }
     
